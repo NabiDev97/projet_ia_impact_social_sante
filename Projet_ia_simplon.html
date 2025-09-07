@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Projet à impact social : Outil d’anonymisation intelligent des données médicales utilisant l’IA (NLP) – Simplon Sénégal DWWM/IA 2025." />
+  <title>Outil d’anonymisation médicale – IA & Impact social</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#121833;
+      --muted:#9fb0ff;
+      --text:#f5f7ff;
+      --accent:#5e7bff;
+      --accent-2:#7be2cf;
+      --ring: 0 0 0 4px rgba(126, 168, 255, 0.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;}
+    a{color:var(--accent)}
+    .container{max-width:1100px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);background:linear-gradient(180deg, rgba(11,16,32,0.85), rgba(11,16,32,0.65));border-bottom:1px solid rgba(255,255,255,0.08);z-index:40}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+    .logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#0a0f1f;font-weight:800}
+    .nav a{text-decoration:none;font-weight:600;opacity:.9}
+    .menu{display:flex;gap:14px;flex-wrap:wrap}
+    .skip{position:absolute;left:-9999px}
+    .skip:focus{left:16px;top:16px;background:#fff;color:#000;padding:8px 12px;border-radius:10px;box-shadow:var(--ring)}
+
+    .hero{padding:64px 0}
+    .hero .wrap{display:grid;grid-template-columns:1fr;gap:28px}
+    @media(min-width:900px){.hero .wrap{grid-template-columns:1.2fr .8fr;align-items:center}}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(126,168,255,.12);border:1px solid rgba(126,168,255,.28);padding:8px 12px;border-radius:999px;font-size:14px}
+    h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:10px 0 8px}
+    p.lead{font-size:clamp(16px,2.2vw,19px);opacity:.9}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.03));border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:20px}
+
+    .grid{display:grid;gap:16px}
+    .grid-3{grid-template-columns:1fr}
+    @media(min-width:760px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+
+    .kpi{display:flex;flex-direction:column;gap:6px}
+    .kpi b{font-size:22px}
+    .chip{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:8px 12px;border-radius:999px;font-size:14px}
+
+    section{padding:28px 0}
+    h2{font-size:clamp(22px,3vw,30px);margin:0 0 12px}
+    .list{display:grid;gap:10px}
+    .list li{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:12px 14px;border-radius:14px}
+
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.14);text-decoration:none;font-weight:700}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#0a0f1f}
+    .btn.ghost{background:transparent;color:var(--text)}
+
+    footer{padding:40px 0 20px;opacity:.7}
+    .small{font-size:13px}
+
+    /* Responsive table-like cards */
+    .cols{display:grid;gap:16px}
+    @media(min-width:900px){.cols{grid-template-columns:repeat(2,1fr)}}
+
+    .taglist{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{font-size:12px;border:1px solid rgba(255,255,255,.18);padding:6px 10px;border-radius:999px;opacity:.9}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="logo">IA</span> Outil d’anonymisation médicale</div>
+      <nav class="menu" aria-label="Navigation principale">
+        <a href="#probleme">Problème</a>
+        <a href="#solution">Solution</a>
+        <a href="#cibles">Cibles</a>
+        <a href="#impact">Impact</a>
+        <a href="#livrables">Livrables</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="hero">
+      <div class="container wrap">
+        <div>
+          <span class="badge" aria-label="Projet à impact social">🚀 Projet à impact social • Santé & IA</span>
+          <h1>Protéger la vie privée tout en accélérant la recherche médicale</h1>
+          <p class="lead">Un outil web qui utilise l’intelligence artificielle (NLP) pour <b>détecter automatiquement</b> les données sensibles et <b>anonymiser</b> les fichiers (CSV/JSON) afin de les partager en toute sécurité.</p>
+          <div class="cta">
+            <a class="btn primary" href="#solution">Voir la solution</a>
+            <a class="btn ghost" href="#livrables">Livrables du test</a>
+          </div>
+          <div class="taglist" style="margin-top:14px">
+            <span class="tag">#Santé</span>
+            <span class="tag">#IA</span>
+            <span class="tag">#NLP</span>
+            <span class="tag">#Anonymisation</span>
+            <span class="tag">#ImpactSocial</span>
+            <span class="tag">#Simplon</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="grid grid-3">
+            <div class="kpi"><b>100%</b><span>Conformité souhaitée aux cours</span></div>
+            <div class="kpi"><b>3</b><span>Techniques : masquage, hachage, pseudo.</span></div>
+            <div class="kpi"><b>&lt; 1m30</b><span>Pitch clair et percutant</span></div>
+          </div>
+          <hr style="border:0;border-top:1px solid rgba(255,255,255,.08);margin:16px 0"/>
+          <p class="small">Démo conceptuelle : l’IA (NER) surligne <em>Nom, Adresse, Téléphone, Email</em> puis applique l’anonymisation choisie. Sortie : fichier prêt pour la recherche.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="probleme">
+      <div class="container cols">
+        <div class="card">
+          <h2>Problème identifié</h2>
+          <ul class="list" role="list">
+            <li>Les données médicales sont <b>hautement sensibles</b> mais indispensables à la recherche.</li>
+            <li>Le partage est freiné par les risques de confidentialité et la conformité (RGPD, CDP Sénégal).</li>
+            <li>Peu d’outils accessibles et adaptés au contexte local.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Objectif</h2>
+          <p>Permettre aux hôpitaux, chercheurs et ONG de partager des jeux de données <b>anonymisés</b> fiables, favorisant la recherche médicale et la santé publique, tout en protégeant la vie privée des patients.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="solution">
+      <div class="container">
+        <div class="card">
+          <h2>Solution proposée avec l’IA</h2>
+          <div class="cols">
+            <div>
+              <ol class="list" style="counter-reset:step">
+                <li>Détection automatique des données sensibles via IA (NLP / NER : noms, adresses, numéros).</li>
+                <li>Anonymisation sécurisée : <b>masquage</b>, <b>pseudonymisation</b>, <b>hachage</b>.</li>
+                <li>Export de jeux de données prêts pour la recherche et les statistiques.</li>
+              </ol>
+              <div class="taglist" style="margin-top:10px">
+                <span class="chip">🧠 IA/NLP</span>
+                <span class="chip">🗂️ CSV / JSON</span>
+                <span class="chip">🔒 Confidentialité</span>
+              </div>
+            </div>
+            <div>
+              <div class="card" style="background:rgba(123,226,207,.08);border-color:rgba(123,226,207,.35)">
+                <p><b>Exemple avant → après</b></p>
+                <p><small>Avant :</small><br/>Mouhamed GAYE, 77 123 45 67, Dakar-Plateau, <em>m.gaye@example.com</em></p>
+                <p><small>Après :</small><br/>M****** G***, 77 **** ** **, D****-P******, <em>sha256: a9f…</em></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cibles">
+      <div class="container grid grid-3">
+        <div class="card"><h2>Centres de santé & hôpitaux</h2><p>Protéger les patients lors du partage des données et fluidifier les collaborations.</p></div>
+        <div class="card"><h2>Chercheurs & universités</h2><p>Accéder à des jeux de données fiables sans compromettre la vie privée.</p></div>
+        <div class="card"><h2>ONG & décideurs publics</h2><p>Analyser les tendances de santé publique en respectant la confidentialité.</p></div>
+      </div>
+    </section>
+
+    <section id="impact">
+      <div class="container grid grid-3">
+        <div class="card"><h2>Protection de la vie privée</h2><p>Renforce la confiance dans le système de santé.</p></div>
+        <div class="card"><h2>Recherche accélérée</h2><p>Partage facilité de données anonymisées de qualité.</p></div>
+        <div class="card"><h2>Conformité</h2><p>Alignement avec RGPD & CDP Sénégal.</p></div>
+      </div>
+    </section>
+
+    <section id="livrables">
+      <div class="container cols">
+        <div class="card">
+          <h2>Livrables (test Simplon)</h2>
+          <ul class="list">
+            <li>Certificats / captures des cours suivis.</li>
+            <li>Document de présentation (PDF, 2 pages).</li>
+            <li>Site web responsive (HTML/CSS) – cette page.</li>
+            <li>Pitch oral de 1 min 30.</li>
+          </ul>
+          <div class="cta">
+            <a class="btn primary" href="#pitch">Voir le pitch (1m30)</a>
+            <a class="btn ghost" href="#" aria-disabled="true" title="Lien vers le PDF à insérer">Télécharger le PDF</a>
+          </div>
+          <p class="small" style="margin-top:8px">Astuce : remplace le lien « Télécharger le PDF » par l’URL de ton fichier hébergé (ex. Google Drive ou GitHub).</p>
+        </div>
+        <!-- <div class="card" id="pitch">
+          <h2>Pitch (1 min 30)</h2>
+          <p>« Les données médicales sont essentielles à la recherche mais hautement sensibles. Notre solution utilise l’IA (NLP) pour détecter automatiquement les informations sensibles et anonymiser les fichiers CSV/JSON. Les hôpitaux, chercheurs et ONG peuvent ainsi partager des données fiables, conformes et utiles à la santé publique, tout en protégeant la vie privée des patients. »</p>
+        </div> -->
+
+        <div class="container card">
+    <h2>Pitch du projet</h2>
+    <div class="video-container">
+      <iframe width="560" height="315" 
+              src="https://www.youtube.com/embed/TON_ID_DE_VIDEO" 
+              title="Pitch du projet" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container small">© 2025 – Projet IA d’anonymisation médicale • Démo front HTML/CSS pour Simplon Sénégal DWWM/IA.
+    </div>
+  </footer>
+</body>
+</html>
